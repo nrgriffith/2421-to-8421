@@ -46,16 +46,16 @@ architecture structure of lab6 is
 
 begin
 
-  Gate1: NOT_OP port map (A=>input(0), Z=>nots(0))                 -- nots0 = !A
-  Gate2: NOT_OP port map (A=>input(1), Z=>nots(1))                 -- nots1 = !B
-  Gate3: NOT_OP port map (A=>input(2), Z=>nots(2))                 -- nots2 = !C
-  Gate4: AND2_OP port map (A=>input(1), B=>input(2), Z=>output(0)) -- W = B*C
-  Gate5: AND2_OP port map (A=>input(1), B=>nots(2), Z=>wire(0))    -- wire0 = B*!C
-  Gate6: AND2_OP port map (A=>input(0), B=>nots(1), Z=>wire(1))    -- wire1 = A*!B
-  Gate7: OR2_OP port map (A=>wire(0), B=>wire(1), Z=>output(1))    -- X = wire0 + wire1
-  Gate8: AND2_OP port map (A=>nots(0), B=>input(2), Z=>wire(2))    -- wire2 = !A*C
-  Gate9: AND2_OP port map (A=>input(0), B=>nots(2), Z=>wire(3))    -- wire3 = A*!C
-  Gate10: OR2_OP port map (A=>wire(2), B=>wire(3), Z=>output(2))   -- Y = wire2 + wire3
-  output(3) <= input(3)                                            -- Z = D
+  Gate1: NOT_OP port map (A=>input(0), Z=>nots(0));                 -- nots0 = !A
+  Gate2: NOT_OP port map (A=>input(1), Z=>nots(1));                 -- nots1 = !B
+  Gate3: NOT_OP port map (A=>input(2), Z=>nots(2));                 -- nots2 = !C
+  Gate4: AND2_OP port map (A=>input(1), B=>input(2), Z=>output(0)); -- W = B*C
+  Gate5: AND2_OP port map (A=>input(1), B=>nots(2), Z=>wire(0));    -- wire0 = B*!C
+  Gate6: AND2_OP port map (A=>input(0), B=>nots(1), Z=>wire(1));    -- wire1 = A*!B
+  Gate7: OR2_OP port map (A=>wire(0), B=>wire(1), Z=>output(1));    -- X = wire0 + wire1
+  Gate8: AND2_OP port map (A=>nots(0), B=>input(2), Z=>wire(2));    -- wire2 = !A*C
+  Gate9: AND2_OP port map (A=>input(0), B=>nots(2), Z=>wire(3));    -- wire3 = A*!C
+  Gate10: OR2_OP port map (A=>wire(2), B=>wire(3), Z=>output(2));   -- Y = wire2 + wire3
+  output(3) <= input(3);                                            -- Z = D
 
 end structure;
